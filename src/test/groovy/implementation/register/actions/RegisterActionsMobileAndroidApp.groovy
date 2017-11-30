@@ -1,11 +1,11 @@
 package implementation.register.actions
 
 import implementation.register.pages.RegisterPage
-import io.cify.framework.actions.ActionsMobileIOSApp
+import io.cify.framework.actions.ActionsMobileAndroidApp
 import io.cify.framework.core.Device
 
 
-class RegisterActionsMobileAndroidApp implements IRegisterActions,  ActionsMobileIOSApp {
+class RegisterActionsMobileAndroidApp implements IRegisterActions, ActionsMobileAndroidApp {
 
     Device device
     RegisterPage registerPage
