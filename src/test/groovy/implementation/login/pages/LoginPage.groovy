@@ -13,35 +13,33 @@ import org.openqa.selenium.support.FindBy
 class LoginPage extends PageObjects {
 
     @iOSFindBy(accessibility = "usernameTextField")
-    @AndroidFindBy(id = "chat.rocket.android:id/editor_username")
+    @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.widget.ScrollView/android.view.View/android.widget.LinearLayout[1]/android.widget.FrameLayout/android.widget.EditText")
     @FindBy(id = "emailOrUsername")
     WebElement usernameField
 
     @iOSFindBy(accessibility = "passwordTextField")
-    @AndroidFindBy(id = "chat.rocket.android:id/editor_passwd")
+    @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.widget.ScrollView/android.view.View/android.widget.LinearLayout[2]/android.widget.FrameLayout/android.widget.EditText")
     @FindBy(id = "pass")
     WebElement passwordField
 
     @iOSFindBy(accessibility = "Next:")
-    @AndroidFindBy(id = "chat.rocket.android:id/btn_login_with_email")
+    @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.widget.ScrollView/android.view.View/android.widget.Button[2]")
     @FindBy(className = "login")
     WebElement nextButton
 
     @iOSFindBy(accessibility = "createNewAccountButton")
-    @AndroidFindBy(id = "chat.rocket.android:id/btn_user_registration")
+    @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.widget.ScrollView/android.view.View/android.widget.Button[1]")
     @FindBy(className = "register")
     WebElement createNewAccountButton
 
-    @AndroidFindBy(xpath = "//*[@id=\"login-card\"]/div[2]/div[1]/div/div")
     @FindBy(xpath = "//*[@id=\"login-card\"]/div[2]/div[1]/div/div")
     WebElement usernameFieldError
 
-    @AndroidFindBy(xpath = "//*[@id=\"login-card\"]/div[2]/div[2]/div/div")
     @FindBy(xpath = "//*[@id=\"login-card\"]/div[2]/div[2]/div/div")
     WebElement passwordFieldError
 
-    @AndroidFindBy(xpath = "//*[@id=\"toast-container\"]/div/div")
-    @FindBy(xpath = "//*[@id=\"toast-container\"]/div/div")
+    @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout[2]/android.widget.LinearLayout/android.widget.TextView")
+    @FindBy(className = "toast-message")
     WebElement toastMessage
 
     LoginPage(Device device) {

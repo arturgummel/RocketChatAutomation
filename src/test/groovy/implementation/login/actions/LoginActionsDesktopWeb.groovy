@@ -86,5 +86,6 @@ class LoginActionsDesktopWeb implements ILoginActions, ActionsDesktopWeb {
     @Override
     boolean isToastMessagedErrorVisible() {
         return isDisplayed(loginPage.getToastMessage())
+
     }
 }

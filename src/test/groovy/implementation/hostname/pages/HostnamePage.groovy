@@ -15,11 +15,13 @@ class HostnamePage extends PageObjects {
     WebElement logo
 
     @iOSFindBy(accessibility = "serverUrlTextField")
-    @AndroidFindBy(id = "chat.rocket.android:id/editor_hostname")
+    //@AndroidFindBy(id = "chat.rocket.android:id/editor_hostname")
+    @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.widget.TextView")
     WebElement hostnameUrlField
 
     @iOSFindBy(accessibility = "Go")
-    @AndroidFindBy(id = "chat.rocket.android:id/btn_connect")
+    // @AndroidFindBy(id = "chat.rocket.android:id/btn_connect")
+    @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.widget.Button")
     WebElement goButton
 
     HostnamePage(Device device) {

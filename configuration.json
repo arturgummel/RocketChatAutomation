@@ -5,12 +5,12 @@
     "android": {
       "capability": "android",
       "UIType": "MobileAndroidApp",
-      "deviceName": "430043c2985c613d device",
+      "deviceName": "Android Device",
       "app": "https://s3-eu-west-1.amazonaws.com/rocket-chat-applications/RocketChat.apk",
       "appPackage": "chat.rocket.android",
       "appActivity": ".activity.MainActivity",
       "fullReset": "true",
-      "remote": ""
+      "remote": "http://0.0.0.0:4723/wd/hub"
     },
     "browser": {
       "UIType": "DesktopWeb",

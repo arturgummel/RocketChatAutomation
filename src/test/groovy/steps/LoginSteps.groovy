@@ -22,12 +22,16 @@ And(~/^user clicks on login button$/) { ->
     ActionsImpl.getLoginActions().clickLogin();
 }
 
-And(~/^user types username$/) { ->
-    ActionsImpl.getLoginActions().enterUsername("test");
+And(~/^user clicks on register button$/) { ->
+    ActionsImpl.getLoginActions().clickRegister();
 }
 
-And(~/^user types password/) { ->
-    ActionsImpl.getLoginActions().enterPassword("qwerty");
+And(~/^user types "(.+)" username$/) { String username ->
+    ActionsImpl.getLoginActions().enterUsername(username);
+}
+
+And(~/^user types "(.+)" password/) { String password ->
+    ActionsImpl.getLoginActions().enterPassword(password);
 }
 
 Then(~/^username error message should be visible$/) { ->
@@ -43,6 +47,7 @@ Then(~/^password error message should be visible$/) { ->
 }
 
 Then(~/^toast message error should be visible$/) { ->
+    println(ActionsImpl.getLoginActions().isToastMessagedErrorVisible())
     if (!(ActionsImpl.getLoginActions().isToastMessagedErrorVisible())) {
         throw new RocketTestException("User not found or incorrect password toast message should be visible")
     }

@@ -3,6 +3,7 @@ package implementation
 import implementation.core.actions.ICoreActions
 import implementation.hostname.actions.IHostnameActions
 import implementation.login.actions.ILoginActions
+import implementation.register.actions.IRegisterActions
 import io.cify.framework.Actions
 import io.cify.framework.core.Device
 import io.cify.framework.core.DeviceManager
@@ -39,5 +40,14 @@ class ActionsImpl {
     static ILoginActions getLoginActions() {
         Device currentDevice = DeviceManager.getInstance().getActiveDevice()
         return (ILoginActions) Actions.getCustomActions(currentDevice, IMPLEMENTATION_PACKAGE + "login.actions.LoginActions")
+    }
+
+    /**
+     * Get register actions for current device
+     * @return
+     */
+    static IRegisterActions getRegisterActions() {
+        Device currentDevice = DeviceManager.getInstance().getActiveDevice()
+        return (IRegisterActions) Actions.getCustomActions(currentDevice, IMPLEMENTATION_PACKAGE + "register.actions.RegisterActions")
     }
 }
