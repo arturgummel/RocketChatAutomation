@@ -4,6 +4,8 @@ import cucumber.api.groovy.EN
 import cucumber.api.groovy.Hooks
 import implementation.ActionsImpl
 import implementation.RocketTestException
+import io.cify.framework.core.Device
+import io.cify.framework.core.DeviceManager
 
 /**
  * Created by FOB Solutions
@@ -50,5 +52,23 @@ Then(~/^toast message error should be visible$/) { ->
     println(ActionsImpl.getLoginActions().isToastMessagedErrorVisible())
     if (!(ActionsImpl.getLoginActions().isToastMessagedErrorVisible())) {
         throw new RocketTestException("User not found or incorrect password toast message should be visible")
+    }
+}
+
+Then(~/^login view is visible for all$/) { ->
+    List<Device> deviceList = DeviceManager.getInstance().getAllActiveDevices();
+    for(Device device: deviceList) {
+        if (!ActionsImpl.getLoginActions().isLoginPageVisible()) {
+            throw new RocketTestException("Login page is not visible for " + device.category.name())
+        }
+    }
+}
+
+Then(~/^social buttons group should be visible$/) { ->
+    List<Device> deviceList = DeviceManager.getInstance().getAllActiveDevices();
+    for(Device device: deviceList) {
+        if (!ActionsImpl.getLoginActions().isSocialLoginButtonGroupVisible()) {
+            throw new RocketTestException("Social Login buttons group is not visible for " + device.category.name())
+        }
     }
 }

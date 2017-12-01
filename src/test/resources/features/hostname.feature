@@ -73,5 +73,16 @@ Feature: Hostname
               And user clicks on login button
               Then toast message error should be visible
 
+  @android @browser
+  Scenario: User opens two applications and sees login views
+    Given user open BROWSER and ANDROID applications
+    When user opens in devices "https://open.rocket.chat" url
+    Then login view is visible for all
+
+  Scenario: User opens two applications and sees social buttons group
+    Given user open BROWSER and ANDROID applications
+    When user opens in devices "https://open.rocket.chat" url
+    And login view is visible for all
+    Then social buttons group should be visible
 
 

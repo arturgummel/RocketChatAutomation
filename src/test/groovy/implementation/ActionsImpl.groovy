@@ -50,4 +50,28 @@ class ActionsImpl {
         Device currentDevice = DeviceManager.getInstance().getActiveDevice()
         return (IRegisterActions) Actions.getCustomActions(currentDevice, IMPLEMENTATION_PACKAGE + "register.actions.RegisterActions")
     }
+
+    /**
+     * Get login actions for any devices
+     * @return
+     */
+    static ILoginActions getLoginActionsForAll(Device currentDevice) {
+        return (ILoginActions) Actions.getCustomActions(currentDevice, IMPLEMENTATION_PACKAGE + "login.actions.LoginActions")
+    }
+
+    /**
+     * Gets core actions for any device
+     * @return
+     */
+    static ICoreActions getCoreActionsForAll(Device currentDevice) {
+        return (ICoreActions) Actions.getCustomActions(currentDevice, IMPLEMENTATION_PACKAGE + "core.actions.CoreActions")
+    }
+
+    /**
+     * Get Hostname actions for any device
+     * @return
+     */
+    static IHostnameActions getHostActionsForAll(Device currentDevice) {
+        return (IHostnameActions) Actions.getCustomActions(currentDevice, IMPLEMENTATION_PACKAGE + "hostname.actions.HostnameActions")
+    }
 }
