@@ -88,4 +88,13 @@ class LoginActionsDesktopWeb implements ILoginActions, ActionsDesktopWeb {
         return isDisplayed(loginPage.getToastMessage())
 
     }
+
+    /**
+     * Verifies if social buttons group is visible
+     * @return
+     */
+    @Override
+    boolean isSocialLoginButtonGroupVisible() {
+        return isDisplayed(loginPage.getSocialButtonsGroup())
+    }
 }

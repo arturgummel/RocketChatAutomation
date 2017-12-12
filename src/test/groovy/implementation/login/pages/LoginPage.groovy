@@ -42,6 +42,10 @@ class LoginPage extends PageObjects {
     @FindBy(className = "toast-message")
     WebElement toastMessage
 
+    @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.widget.ScrollView/android.view.View/android.widget.ImageButton")
+    @FindBy(className = "social-login")
+    WebElement socialButtonsGroup
+
     LoginPage(Device device) {
         super(device)
     }

@@ -50,4 +50,10 @@ interface ILoginActions {
      * @return
      */
     boolean isToastMessagedErrorVisible()
+
+    /**
+     * Verifies if social buttons group is visible
+     * @return
+     */
+    boolean isSocialLoginButtonGroupVisible()
 }
